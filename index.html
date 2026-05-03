@@ -1,0 +1,4667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kim Paulo Sumbra </title>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- 🔥 FAVICON (TAB ICON) -->
+   <link rel="icon" type="image/png" href="img/profile.jpg">
+
+  <!-- 🔥 OPEN GRAPH (FACEBOOK / MESSENGER / GITHUB PREVIEW) -->
+ <!-- 🔥 OPEN GRAPH (UPDATED FOR NEW WEBSITE) -->
+<meta property="og:title" content="Judy Mae Candelario Talam Portfolio">
+<meta property="og:description" content="Welcome to my OJT Portfolio and Internship Documentation">
+<meta property="og:image" content="https://monmon799.github.io/JudyMaeCandelarioTalam/img/profile.jpg">
+<meta property="og:url" content="https://monmon799.github.io/JudyMaeCandelarioTalam/">
+<meta property="og:type" content="website">
+  <!-- (optional but good) -->
+  <meta name="theme-color" content="#ffffff">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #ffffff;
+  color: #0e0e0e;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #ffffff;
+  color: #042ea2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ===== COMMON ICON STYLE ===== */
+.right-icons a {
+  margin-left: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+/* FACEBOOK ICON */
+.right-icons a img {
+  width: 20px;
+  height: 20px;
+}
+
+.right-icons a.fb:hover {
+  background: #1877F2; /* Facebook blue */
+  transform: scale(1.1);
+}
+
+/* INSTAGRAM ICON */
+.right-icons a.ig {
+  font-size: 20px;
+  color: #333;
+}
+
+.right-icons a.ig:hover {
+  background: linear-gradient(45deg,
+    #f09433,
+    #e6683c,
+    #dc2743,
+    #cc2366,
+    #bc1888
+  );
+  color: white;
+  transform: scale(1.1);
+}
+
+
+.navbar .menu-btn {
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+  color: #1540c0;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 220px;
+  height: calc(100vh - 60px);
+  background: #ffffff;
+  border-right: 2px solid #e0e0e0;
+  padding-top: 10px;
+  overflow-y: auto;
+  z-index: 2001;
+  transition: 0.3s ease;
+}
+
+/* LINKS */
+.sidebar a,
+.dropdown-btn {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #0a0a0a;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.sidebar a i,
+.dropdown-btn i:first-child {
+  width: 20px;
+  text-align: center;
+  margin-right: 8px;
+}
+
+.sidebar a:hover,
+.dropdown-btn:hover {
+  background: #e3f2fd;
+}
+
+/* PROFILE */
+.sidebar .profile {
+  text-align: center;
+  padding: 20px 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar .profile img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #1540c0;
+}
+
+.sidebar .profile h3 {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.sidebar .profile p {
+  font-size: 12px;
+  color: #666;
+}
+
+/* INTRO */
+.sidebar-intro {
+  text-align: center;
+  padding: 10px;
+  font-size: 13px;
+}
+
+/* DROPDOWN */
+.dropdown {
+  width: 100%;
+}
+
+.dropdown-btn {
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 12px;
+  margin-left: auto;
+  transition: 0.3s;
+}
+
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.dropdown.active .dropdown-content {
+  max-height: 500px;
+}
+.dropdown.active .arrow {
+  transform: rotate(180deg);
+}
+
+/* CONTENT */
+.content {
+  margin-top: 60px;
+  margin-left: 280px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* CARD GENERAL */
+.card {
+  width: 100%;
+  max-width: 1100px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.card:not(.hero-card)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+
+}
+
+/* ================= HERO CARD (ONLY THIS HAS BACKGROUND) ================= */
+.hero-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 40px 20px;
+  color: #fff;
+}
+
+/* background image ONLY here */
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("img/back.jpg") center/cover no-repeat;
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+/* dark overlay */
+.hero-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2;
+}
+
+/* content on top */
+.hero-inner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  text-align: center;
+}
+
+/* HERO IMAGES */
+.hero-images {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-images img {
+  width: 120px;
+  height: 120px;
+  
+  border-radius: 50%; /* 🔥 ginawang circle */
+/* optional para maganda outline */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: 0.3s ease;
+}
+
+.hero-images img:hover {
+  transform: scale(1.08);
+}
+
+/* TITLE */
+.hero-title h1 {
+  font-size: 32px;
+  color: #fff;
+}
+
+.hero-title p {
+  color: #ddd;
+  font-size: 14px;
+}
+
+/* MINI CARDS */
+.hero-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.mini-card {
+  background: rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(6px);
+  padding: 15px;
+  border-radius: 10px;
+  color: #fff;
+  border-left: 3px solid #1540c0;
+  transition: 0.3s;
+}
+
+.mini-card:hover {
+  transform: translateY(-5px);
+  background: rgba(43, 43, 44, 0.232);
+  
+}
+
+.mini-card h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+/* =========================
+   TABLE OF CONTENTS CARD
+========================= */
+.toc-cardi {
+  text-align: left;
+  width: 100%;
+  max-width: 1100px;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  background: #fff;
+}
+
+/* LEFT BLUE BAR */
+.toc-cardi:not(.hero-card)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: #1540c0;
+}
+
+/* =========================
+   CONTENT WRAPPER
+========================= */
+.toc-content {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* =========================
+   ROW STYLE
+========================= */
+.toc-content p {
+  display: flex;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 4px 0;
+  cursor: pointer;
+  transition: 0.25s ease;
+  flex-wrap: wrap; /* 🔥 important */
+}
+
+/* HOVER EFFECT */
+.toc-content p:hover {
+  transform: translateX(8px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   LEVELS
+========================= */
+.lvl1 {
+  font-weight: 600;
+}
+
+.lvl2 {
+  padding-left: 25px;
+  font-size: 14px;
+}
+
+/* =========================
+   TEXT FIX
+========================= */
+.toc-content p span {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* =========================
+   DOT LINE (DESKTOP + MOBILE)
+========================= */
+.toc-content p::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px dotted rgba(0,0,0,0.45);
+  margin-left: 12px;
+  min-width: 20px; /* 🔥 prevents collapse on mobile */
+}
+
+/* =========================
+   TITLE COLOR
+========================= */
+.toc-content b {
+  color: rgb(0, 1, 12);
+}
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+========================= */
+@media (max-width: 768px) {
+
+  .toc-content p {
+    font-size: 13px;
+    align-items: flex-start;
+  }
+
+  .lvl2 {
+    padding-left: 15px;
+  }
+
+  /* KEEP dotted line (important fix) */
+  .toc-content p::after {
+    border-bottom: 1px dotted rgba(0,0,0,0.35);
+    flex: 1;
+    margin-left: 8px;
+  }
+
+  /* better wrapping */
+  .toc-content p span {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+}
+
+
+
+
+
+
+
+
+
+.highlight-name {
+  font-weight: 700;
+  
+ 
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+.highlight-name:hover {
+  background: #1540c0;
+  color: white;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+  }
+
+  .hero-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-images img {
+    width: 100px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .navbar .menu-btn {
+    display: inline-block;
+  }
+
+  .right-icons {
+    display: none;
+  }
+
+  .sidebar {
+    left: -220px;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
+
+/* 🔥 ADD VERTICAL GAP BETWEEN HERO AND TOC */
+/* 🔥 ADD VERTICAL GAP BETWEEN HERO AND TOC */
+#home {
+  margin-bottom: 80px; /* mas malaki space sa baba */
+}
+
+/* TOC spacing */
+#toc {
+  margin-top: 30px; /* mas malayo sa home */
+}
+
+/* overall spacing control */
+.content {
+  gap: 30px; /* mas airy / maluwag tignan */
+}
+
+
+#introduction {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* HEADER */
+.section-header h2 {
+  color: #1540c0;
+  margin-bottom: 15px;
+}
+
+/* INTRO TEXT */
+.intro-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* SUB SECTION BOX */
+.sub-section {
+  margin-bottom: 20px;
+  padding-left: 12px;
+  border-left: 4px solid #1540c0;
+}
+
+/* TITLE */
+.sub-section h3 {
+  color: #1540c0;
+  margin-bottom: 8px;
+}
+
+/* PARAGRAPH */
+.sub-section p {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* ================= GENERAL CARD STYLE ================= */
+.card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* ================= TITLES ================= */
+.card h2 {
+  font-size: 22px;
+  color: #1540c0;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card h3 {
+  color: #1540c0 ;
+  margin-top: 15px;
+  margin-bottom: 8px;
+}
+
+/* ================= TEXT STYLE ================= */
+.card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+/* ================= ACKNOWLEDGMENT HIGHLIGHT ================= */
+.highlight-name {
+  font-weight: 600;
+  color: #1540c0;
+  padding: 3px 6px;
+  border-radius: 6px;
+  background: #e3f2fd;
+  transition: 0.3s;
+}
+
+.highlight-name:hover {
+  background: #1540c0;
+  color: #fff;
+}
+
+/* ================= CAREER SECTION ================= */
+.career-item {
+  background: #f5f9ff;
+  border-left: 5px solid #1540c0;
+  padding: 15px 18px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.career-item:hover {
+  transform: translateX(5px);
+  background: #eaf3ff;
+}
+
+/* ================= PRAYER SPECIAL STYLE ================= */
+#prayer {
+  background: linear-gradient(135deg, #ffffff, #f0f7ff);
+}
+
+#prayer p {
+  font-style: italic;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .card {
+    padding: 20px;
+  }
+
+  .card h2 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+}
+
+
+
+/* ================= INTRO SECTION ================= */
+/* ================= INTRO HERO TEXT LAYOUT ================= */
+/* ================= INTRO SECTION ================= */
+
+#introduction {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 0 0 260px;
+  padding: 40px;
+  transition: 0.3s ease;
+}
+
+/* ================= INTRO BOX ================= */
+
+#introduction .intro-box {
+  position: relative;
+  text-align: center;
+  background: transparent;
+  padding: 140px 80px;
+  min-height: 420px;
+  border-left: 5px solid #1540c0;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  color: #fff;
+  z-index: 1;
+}
+
+/* BACKGROUND IMAGE */
+#introduction .intro-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("img/back.jpg") center/cover no-repeat;
+  transform: scale(1.35);
+  z-index: 1;
+}
+
+/* DARK OVERLAY */
+#introduction .intro-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 2;
+}
+
+/* FORCE TEXT ABOVE BACKGROUND (IMPORTANT FIX) */
+#introduction .intro-box * {
+  position: relative;
+  z-index: 5;
+}
+
+/* ================= CHAPTER TEXT ================= */
+
+#introduction .chapter {
+  font-size: 14px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 10px;
+  color: #f1f1f1;
+}
+
+/* ================= MAIN TITLE ================= */
+
+#introduction .main-title {
+  font-size: 52px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* ================= INTRO TEXT ================= */
+
+#introduction .intro-text {
+  font-size: 20px;
+  line-height: 2.4;
+  color: #eee;
+}
+
+/* ================= SUB CARDS ================= */
+
+#introduction .card-box {
+  background: #ffffff;
+  border-left: 5px solid #1540c0;
+  padding: 80px 50px;
+  margin-bottom: 25px;
+  min-height: 160px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+/* HOVER */
+#introduction .card-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* TITLES */
+#introduction h3 {
+  color: #1540c0;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+/* PARAGRAPH */
+#introduction p {
+  font-size: 16px;
+  line-height: 2;
+  color: #444;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  #introduction {
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  #introduction .intro-box {
+    padding: 60px 25px;
+    min-height: auto;
+  }
+
+  #introduction .main-title {
+    font-size: 32px;
+  }
+
+  #introduction .intro-text {
+    font-size: 16px;
+  }
+
+  #introduction .card-box {
+    padding: 25px 20px;
+  }
+}
+
+
+
+
+
+
+/* ================= COMPANY SECTION (NEW MODERN DESIGN) ================= */
+.company-section {
+  width: calc(100% - 260px);
+  margin-left: 260px;
+  padding: 40px;
+}
+
+/* HERO */
+.company-hero {
+  position: relative;
+  text-align: center;
+  padding: 120px 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+/* background */
+.company-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("img/back.jpg") center/cover no-repeat;
+  transform: scale(1.1);
+}
+
+/* dark overlay */
+.company-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+/* text on top */
+.company-hero * {
+  position: relative;
+  z-index: 2;
+}
+
+.company-hero .chapter {
+  font-size: 14px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
+.company-hero .main-title {
+  font-size: 48px;
+  margin: 10px 0;
+}
+
+.company-hero .intro-text {
+  font-size: 18px;
+  color: #ddd;
+}
+
+/* GRID */
+.company-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* CARDS */
+.company-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid #1540c0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.company-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.company-card h3 {
+  color: #1540c0;
+  margin-bottom: 10px;
+}
+
+.company-card p {
+  color: #444;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .company-section {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .company-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-hero {
+    padding: 60px 20px;
+  }
+
+  .company-hero .main-title {
+    font-size: 30px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ================= CHAPTER III ISOLATED DESIGN ================= */
+.chapter3 {
+  width: calc(100% - 260px);
+  margin-left: 260px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* =========================
+   HERO (UPDATED MODERN STYLE)
+========================= */
+.chapter3-hero {
+  position: relative;
+  text-align: center;
+  padding: 100px 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+/* background image */
+.chapter3-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("img/back.jpg") center/cover no-repeat;
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+/* dark overlay */
+.chapter3-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1;
+}
+
+/* text layer */
+.chapter3-hero h2,
+.chapter3-hero h1,
+.chapter3-hero p {
+  position: relative;
+  z-index: 2;
+}
+
+.chapter3-hero h2 {
+  font-size: 14px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
+.chapter3-hero h1 {
+  font-size: 42px;
+  margin: 10px 0;
+}
+
+.chapter3-hero p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* =========================
+   GRID
+========================= */
+.chapter3-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* =========================
+   CARD
+========================= */
+.chapter3-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  border-left: 5px solid #1540c0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.chapter3-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.chapter3-card h3 {
+  color: #0d47a1;
+  margin-bottom: 10px;
+}
+
+.chapter3-card p {
+  color: #444;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .chapter3 {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .chapter3-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter3-hero h1 {
+    font-size: 28px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================= CHAPTER IV: ASSESSMENT (ISOLATED DESIGN) ================= */
+.assessment-section {
+  width: calc(100% - 260px);
+  margin-left: 260px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* HERO */
+.assessment-hero {
+  position: relative;
+  text-align: center;
+  padding: 100px 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+/* background */
+.assessment-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("img/back.jpg") center/cover no-repeat;
+  transform: scale(1.1);
+}
+
+/* dark overlay */
+.assessment-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+/* text above background */
+.assessment-hero * {
+  position: relative;
+  z-index: 2;
+}
+
+.assessment-hero .chapter {
+  font-size: 14px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
+.assessment-hero .main-title {
+  font-size: 44px;
+  margin: 10px 0;
+}
+
+.assessment-hero .intro-text {
+  font-size: 16px;
+  color: #ddd;
+}
+
+/* CARD */
+.assessment-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 5px solid #1540c0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.assessment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.assessment-card h3 {
+  color: #0f0f0f;
+  margin-bottom: 10px;
+}
+
+.assessment-card p {
+  color: #444;
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .assessment-section {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .assessment-hero .main-title {
+    font-size: 28px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= APPENDICES SECTION ================= */
+.appendix-section {
+  width: calc(100% - 260px);
+  margin-left: 260px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* ================= HERO ================= */
+.appendix-hero {
+  position: relative;
+  text-align: center;
+  padding: 90px 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.appendix-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("img/back.jpg") center/cover no-repeat;
+  transform: scale(1.1);
+}
+
+.appendix-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.appendix-hero * {
+  position: relative;
+  z-index: 2;
+}
+
+.appendix-hero .chapter {
+  font-size: 14px;
+  letter-spacing: 3px;
+  opacity: 0.8;
+}
+
+.appendix-hero .main-title {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.appendix-hero .intro-text {
+  font-size: 15px;
+  color: #ddd;
+}
+
+/* ================= GRID (A–N CARDS) ================= */
+.appendix-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* ================= GLOBAL CARD STYLE (ALL CARDS) ================= */
+.appendix-card,
+.appendix-card-p,
+.appendix-card-q {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border-left: 4px solid #1540c0;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* hover */
+.appendix-card:hover,
+.appendix-card-p:hover,
+.appendix-card-q:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(13,71,161,0.2);
+}
+
+/* ================= TOP ================= */
+.appendix-card .top,
+.appendix-card-p .top,
+.appendix-card-q .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+/* TITLE */
+.appendix-card h3,
+.appendix-card-p h3,
+.appendix-card-q h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #070707;
+  margin: 0;
+  text-align: center;
+  flex: 1;
+}
+
+/* ICON */
+.appendix-card .icon,
+.appendix-card-p .icon,
+.appendix-card-q .icon {
+  font-size: 40px;
+  color: #060606;
+}
+
+/* ================= CONTENT FIX (NO SPACING PROBLEM) ================= */
+.appendix-card .content,
+.appendix-card-p .content,
+.appendix-card-q .content {
+  margin: 0;
+  padding: 0;
+}
+
+/* PARAGRAPH FIX */
+.appendix-card .content p,
+.appendix-card-p .content p,
+.appendix-card-q .content p {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: justify;
+  color: #444;
+}
+
+/* ================= BUTTON ================= */
+.appendix-card button,
+.appendix-card-p button,
+.appendix-card-q button {
+  margin-top: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  background: #1540c0;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s;
+  align-self: flex-start;
+}
+
+.appendix-card button:hover,
+.appendix-card-p button:hover,
+.appendix-card-q button:hover {
+  background: #1540c0;
+}
+
+/* ================= P & Q ROW (SIDE BY SIDE) ================= */
+.appendix-row-pq {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.appendix-card-p,
+.appendix-card-q {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* ================= MODAL ================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.95);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+  display: block;
+  margin: auto;
+
+  transform: rotate(0deg);
+  image-orientation: from-image;
+
+  border-radius: 12px;
+  animation: zoomIn 0.25s ease;
+}
+
+.close {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 45px;
+  color: #fff;
+  cursor: pointer;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .appendix-section {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .appendix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .appendix-row-pq {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= ETHICS CARD ONLY ================= */
+.ethics-card-o {
+  max-width: 1200px;   /* 🔥 pinalaki from 1000px */
+  width: 100%;          /* 🔥 responsive para di sumobra sa screen */
+  margin: 25px auto;
+  background: #ffffff;
+  border-left: 5px solid #1540c0;
+  border-radius: 12px;
+  padding: 28px 30px;  /* 🔥 mas maluwag loob */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+  transition: 0.3s ease;
+}
+
+/* hover effect */
+.ethics-card-o:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* HEADER */
+.ethics-top-o {
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.ethics-top-o h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a0a0a;
+}
+
+/* CONTENT */
+.ethics-content-o {
+  text-align: left; /* 🔥 FORCE LEFT */
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* INTRO */
+.ethics-intro-o {
+  text-indent: 35px;
+  margin-bottom: 12px;
+}
+
+/* SUBTITLE */
+.ethics-subtitle-o {
+  margin: 10px 0;
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+/* LIST */
+.ethics-list-o {
+  padding-left: 22px;
+  margin-top: 10px;
+}
+
+.ethics-list-o li {
+  margin-bottom: 10px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .ethics-card-o {
+    margin: 10px;
+    padding: 15px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  width: 85vw;
+  height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* CLOSE */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 45px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* NAV BUTTONS */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.nav:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.left {
+  left: 20px;
+}
+
+.right {
+  right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  color: #333;
+  font-size: 18px;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+/* INSTAGRAM STYLE */
+.social-icon.ig:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+
+
+
+
+.ojt-footer {
+  background: linear-gradient(135deg, #3659e2, #1540c0);
+  color: #fff;
+  padding: 60px 20px 25px;
+  margin-top: 60px;
+}
+
+/* 🔥 PUSH CONTENT TO RIGHT */
+.footer-content {
+  max-width: 1200px;
+  margin-left: auto;   /* ✔ push right */
+  margin-right: 40px;  /* ✔ space from edge */
+}
+
+/* title */
+.footer-content h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.footer-content p {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* GRID */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* titles */
+.footer-grid h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-left: 4px solid #fff;
+  padding-left: 10px;
+}
+
+/* list */
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* links */
+.footer-grid ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.85;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+.footer-grid ul li a:hover {
+  opacity: 1;
+  transform: translateX(6px);
+  color: #ffeb3b;
+}
+
+/* bottom */
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 15px;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .footer-content {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0 10px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+/*additional*/
+#ojt-footer-social {
+  display: none;
+}
+
+/* ===== MOBILE ONLY ===== */
+@media (max-width: 768px) {
+
+  #ojt-footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+    padding: 10px 0;
+  }
+
+  /* ICON BUTTON */
+  #ojt-footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+
+    background: rgba(16, 109, 230, 0.2);
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.4);
+
+    text-decoration: none;
+    transition: 0.3s ease;
+  }
+
+  /* 🔥 BLACK ICON DEFAULT */
+  #ojt-footer-social a img {
+    width: 24px;
+    height: 24px;
+   /* black color */
+    transition: 0.3s ease;
+  }
+
+  /* FACEBOOK HOVER */
+  #ojt-footer-social a.fb:hover {
+    background: #1877F2;
+    transform: scale(1.15);
+    box-shadow: 0 8px 18px rgba(1, 91, 207, 0.5);
+  }
+
+  /* INSTAGRAM HOVER */
+  #ojt-footer-social a.ig:hover {
+    background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+    transform: scale(1.15);
+    box-shadow: 0 8px 18px rgba(220,39,67,0.5);
+  }
+
+  /* 🔥 ICON BECOMES WHITE ON HOVER */
+
+}
+
+
+
+
+
+
+
+
+
+
+.card-box.sub-card {
+  text-align: justify;       /* pantay left & right */
+  line-height: 1.7;          /* mas readable */
+  font-size: 15px;
+  color: #333;
+}
+
+.card-box.sub-card h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.card-box.sub-card p {
+  text-indent: 40px;        /* parang essay style */
+}
+
+
+.card-box.sub-card ol {
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.card-box.sub-card li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.company-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.company-card p {
+  text-align: justify;
+  line-height: 1.7;
+  text-indent: 40px;
+  margin-bottom: 15px;
+}
+
+
+.mv-container {
+  display: flex;
+  gap: 30px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.mv-card {
+  flex: 1;
+  min-width: 280px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.mv-card:hover {
+  transform: translateY(-5px);
+}
+
+.mv-card h4 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.mv-card p {
+  text-align: justify;
+  line-height: 1.6;
+  text-indent: 30px;
+}
+
+.mv-card ul,
+.mv-card ol {
+  margin-left: 20px;
+}
+
+.mv-card li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Colors per section */
+.mission { border-left: 5px solid #1540c0; }
+.vision { border-left: 5px solid #1540c0; }
+.core { border-left: 5px solid #1540c0; }
+.goals { border-left: 5px solid #1540c0; }
+
+
+
+
+
+.org-image {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.org-image img {
+  width: 100%;
+  max-width: 900px; /* para di sobrang laki */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.org-image img:hover {
+  transform: scale(1.03);
+}
+
+.filter-box {
+  margin: 20px 0;
+}
+
+.filter-box select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #2c3e50;
+  color: white;
+}
+
+
+
+
+
+.dtr-container {
+  overflow-x: auto;
+}
+
+/* TABLE */
+.dtr-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+/* HEADER */
+.dtr-table thead {
+  color: white;
+}
+
+/* CELLS */
+.dtr-table th,
+.dtr-table td {
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+
+/* ROW EFFECT */
+.dtr-table tr {
+  background: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* HOVER EFFECT PER ROW (movement only) */
+.dtr-table tr:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* CLICK EFFECT */
+.dtr-table tr:active {
+  transform: scale(0.98);
+}
+
+/* MONTH ROW */
+.month td {
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: 1px;
+}
+
+
+
+
+/* SUMMARY BOX */
+.dtr-summary {
+  margin-top: 25px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dtr-summary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* SUMMARY TABLE */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.summary-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.summary-table tr:last-child td {
+  border-bottom: none;
+}
+
+.summary-table td:first-child {
+  font-weight: 500;
+}
+
+/* GRAND TOTAL */
+.grand-total td {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.chapter3-section {
+  margin-top: 20px;
+}
+
+/* TITLE */
+.chapter3-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* GRID */
+.chapter3-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.chapter3-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* HOVER EFFECT (movement only) */
+.chapter3-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .chapter3-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .chapter3-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.chapter3-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.chapter3-card h3 i {
+  color: #0d47a1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* TABLE */
+.chapter3-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  background: white;
+}
+
+/* HEADER */
+.chapter3-table thead th {
+  padding: 14px;
+  background: #1e235b;
+  color: white;
+  text-align: center;
+}
+
+/* CELLS */
+.chapter3-table td {
+  padding: 14px;
+  text-align: center;
+  border: none;
+  background: #fff;
+}
+
+/* LEFT ALIGN OBJECTIVES */
+.chapter3-table td:first-child {
+  text-align: left;
+}
+
+/* 🔥 GREEN TEXT ONLY */
+.done {
+  color: #1f6f3a;
+  font-weight: 600;
+}
+
+/* ROW HOVER */
+.chapter3-table tr {
+  transition: transform 0.2s ease;
+}
+
+.chapter3-table tr:hover td {
+  transform: translateY(-3px);
+}
+
+
+
+
+
+
+/* =========================
+   PROFESSIONAL TABLE GRID LINES
+========================= */
+
+/* FULL BORDER BOX */
+.chapter3-table {
+  border: 1px solid #d6d6d6;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* ADD VERTICAL + HORIZONTAL LINES */
+.chapter3-table td,
+.chapter3-table th {
+  border: 1px solid #e1e1e1;
+}
+
+/* HEADER FIX */
+.chapter3-table thead th {
+  border: 1px solid #2b2f6b;
+}
+
+/* REMOVE FLOAT EFFECT (para hindi magulo pag may lines) */
+.chapter3-table tr:hover td {
+  transform: none;
+  background: #f3f7ff;
+}
+
+/* OPTIONAL: MAKE ROWS CLEANER */
+.chapter3-table tbody tr td {
+  background: #fff;
+}
+
+/* OPTIONAL: BETTER SPACING FOR READABILITY */
+.chapter3-table td {
+  padding: 12px;
+}
+
+
+
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 15px;
+}
+
+/* CARD */
+.analysis-card {
+  position: relative;
+  background: #fff;
+  padding: 18px 18px 18px 22px; /* extra left space for accent */
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+/* 🔵 LEFT BLUE SIDE BAR */
+.analysis-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: #0fb5f2;
+  border-radius: 12px 0 0 12px;
+}
+
+/* hover movement only */
+.analysis-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.analysis-card h4 {
+  margin-bottom: 10px;
+  color: #0c0c0c;
+}
+
+.analysis-card p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CARD */
+.assessment-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+/* TITLE */
+.card-title {
+  text-align: left;
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e235b;
+  margin-bottom: 10px;
+  padding-left: 10px;
+ 
+}
+
+/* MAIN HEADER */
+.assessment-info-title {
+  text-align: center;
+  font-size: 20px;   /* 🔥 pinalaki */
+  font-weight: 700;
+  color: #1e235b;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* ICON STYLE */
+.assessment-info-title i {
+  margin-right: 12px;
+  color: #1e235b;
+}
+
+/* SUBTITLE */
+.assessment-subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* 🔥 2-COLUMN LAYOUT */
+.assessment-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* COLUMN */
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ROW (NO LINES + BIGGER TEXT) */
+.info-row {
+  display: flex;
+  gap: 8px;
+  font-size: 15px;   /* 🔥 pinalaki */
+  padding: 6px 0;
+  border: none;      /* 🔥 tinanggal line */
+}
+
+/* LABEL */
+.info-row span {
+  font-weight: 700;
+  color: #1e235b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .assessment-info {
+    grid-template-columns: 1fr;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+
+
+
+
+
+
+.section-title-eval {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1e235b;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 15px;
+  padding: 10px 15px;
+
+
+
+  width: 100%;
+  box-sizing: border-box;
+
+  position: relative;
+  padding-left: 20px;
+}
+
+/* 🔵 THICK BLUE VERTICAL BAR */
+.section-title-eval::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 5px;              /* 🔥 mas makapal */
+  background: #0d47a1;     /* 🔵 blue */
+  border-radius: 3px;
+}
+
+/* 🔵 BLUE HORIZONTAL LINE */
+.section-title-eval::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 1px;             /* 🔥 mas makapal */
+  background: #0d47a1;     /* 🔵 blue */
+  border-radius: 2px;
+}
+
+
+
+
+.section-subtitle-eval {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+  padding-left: 10px;
+  font-style: italic;  /* 🔥 italic na */
+}
+
+
+
+
+/* 🔥 MODAL BACKGROUND */
+.profile-image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔥 IMAGE */
+.profile-image-modal img {
+  width: auto;
+  height: 80vh;
+  max-width: 90vw;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
+  animation: profileZoom 0.3s ease;
+  display: block;
+}
+/* 🔥 CLOSE BUTTON */
+.profile-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.profile-close-btn:hover {
+  color: red;
+}
+
+/* 🔥 ANIMATION */
+@keyframes profileZoom {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* pointer */
+.profile-click {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+.internship-info-card {
+  max-width: 2000px;
+  margin: 20px 0; /* 👈 tanggal center, naka-left na */
+  padding: 25px;
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  font-family: Arial, sans-serif;
+}
+
+.internship-title {
+  text-align: left; /* 👈 naka-left title */
+  font-size: 22px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+}
+
+.internship-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.internship-info-table tr {
+  border-bottom: 1px solid #eee;
+}
+
+.internship-info-table tr:last-child {
+  border-bottom: none;
+}
+
+.internship-info-table td {
+  padding: 14px 12px;
+  font-size: 14px;
+}
+
+.internship-info-table .label {
+  width: 35%;
+  font-weight: 600;
+  color: #333;
+  background: #f5f6f8;
+  border-right: 1px solid #eee;
+}
+
+.internship-info-table .value {
+  color: #555;
+  background: #fff;
+}
+
+.internship-info-table tr:hover td {
+  background: #f9fbff;
+  transition: 0.2s ease;
+}
+
+
+
+
+.gallery-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-modal img {
+  height: 85vh;
+  width: auto;
+  max-width: 90vw;
+  object-fit: contain;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo"><i class="fa fa-graduation-cap"></i> OJT E-Portfolio</div>
+
+  <div style="display:flex; align-items:center;">
+    <div class="right-icons">
+
+  <!-- FACEBOOK -->
+<a href="https://www.facebook.com/kimpaulo.sombra" target="_blank" class="fb">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24">
+</a>
+
+  <!-- INSTAGRAM -->
+  <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F_u%2Fkimpaulosombra%3Figsh%3DMWdkZGNneWN3Mzc3NA%253D%253D%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExUXFuSk5qUG1uVTg0UzlVVXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5rRO1YWxYDeisutnUiprz7dc2ZKbw8_ZPsASSYkVYm2g_WWF6B10yPOZN5Kw_aem_FkpuNCDIao22AVASFbfpcw&h=AT47wEYpYsWXdyBu88_5SDjZkq1exNMp8GDvdjJqNG-vHF_euSF3FNKxCd2UcjU3iR49InAppJseNN3nIseD75_7mKIOeanUHLWA-rEL8SVuvrbceH7SJM6js6T1LbOn" target="_blank" class="social-icon ig">
+  <i class="fab fa-instagram"></i>
+</a>
+
+</div>
+
+    <div class="menu-btn" onclick="toggleSidebar()">
+      <i class="fa fa-bars"></i>
+    </div>
+  </div>
+</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+ <div class="profile">
+    <img src="img/profile.jpg" onclick="openProfileImage(this)" class="profile-click">
+    <h3>Kim Paulo Sumbra </h3>
+    <p> Student • OJT</p>
+  </div>
+
+  <div class="sidebar-intro" style="color:#000;">
+    My Portfolio Content
+  </div>
+
+<a onclick="showSection('home')"><i class="fa fa-home"></i> Title Page</a>
+ <div class="dropdown">
+
+<div class="dropdown-btn" onclick="showSection('introduction')">
+  <i class="fa fa-book"></i> I. Introduction
+  <i class="fa fa-chevron-down arrow"></i>
+</div>
+
+  <div class="dropdown-content">
+
+<a href="#importance" onclick="goToSection(event, 'importance')">
+  A. Importance of Internship
+</a>
+
+<a href="#objectives" onclick="goToSection(event, 'objectives')">
+  B. Objectives of Internship
+</a>
+
+<a href="#timeplace" onclick="goToSection(event, 'timeplace')">
+  C. Time and Place
+</a>
+
+  </div>
+
+</div>
+
+<div class="dropdown">
+  <div class="dropdown-btn" onclick="showSection('company')">
+    <i class="fa fa-building"></i> II. Company Profile
+    <i class="fa fa-chevron-down arrow"></i>
+  </div>
+
+  <div class="dropdown-content">
+
+    <a href="#nature" onclick="goToSection(event, 'nature')">
+      a. Nature of Agency
+    </a>
+
+    <a href="#mission" onclick="goToSection(event, 'mission')">
+      b. Mission & Vision
+    </a>
+
+    <a href="#history" onclick="goToSection(event, 'history')">
+      c. History / Background
+    </a>
+
+    <a href="#org" onclick="goToSection(event, 'org')">
+      d. Organizational Structure
+    </a>
+
+  </div>
+</div>
+
+
+
+<div id="profileImageModal" class="profile-image-modal">
+  <span class="profile-close-btn" onclick="closeProfileImage()">&times;</span>
+  <img id="profileModalImg">
+</div>
+
+
+<div class="dropdown">
+  <div class="dropdown-btn" onclick="showSection('work')">
+    <i class="fa fa-briefcase"></i> III. Work Experience
+    <i class="fa fa-chevron-down arrow"></i>
+  </div>
+
+  <div class="dropdown-content">
+<a href="#" onclick="showSection('work'); setTimeout(()=>goTo('weekly'),100); return false;">
+  a. Weekly Report
+</a>
+
+<a href="#" onclick="showSection('work'); setTimeout(()=>goTo('dtr'),100); return false;">
+  b. Daily Time Record
+</a>
+
+<a href="#" onclick="showSection('work'); setTimeout(()=>goTo('progress'),100); return false;">
+  c. Progress Report
+</a>
+
+<a href="#" onclick="showSection('work'); setTimeout(()=>goTo('analysis'),100); return false;">
+  d. Analysis Report
+</a>
+
+  </div>
+</div>
+
+  <a href="#" onclick="showSection('assessment'); return false;">
+  <i class="fa fa-check-circle"></i> IV. Assessment
+</a>
+
+<a href="#" onclick="showSection('appendices'); return false;">
+  <i class="fa fa-folder"></i> Appendices
+</a>
+</div>
+
+<!-- CONTENT -->
+<!-- CONTENT -->
+<div class="content">
+    <!-- 🔥 TOP IMAGES -->
+<!-- ================= HOME ================= -->
+<div class="hero section" id="home">
+
+  <div class="card hero-card">
+
+  <div class="hero-inner">
+
+    <div class="hero-images">
+      <img src="img/omsc.png">
+      <img src="img/bsit.png">
+     
+    </div>
+
+    <div class="hero-title">
+      <h1>ON-THE-JOB-TRAINING</h1>
+      <p style="color:#fff; opacity:0.9;">
+    OJT E-Portfolio | Student • Internship Journey
+  </p>
+    </div>
+
+    <div class="hero-cards">
+     <div class="mini-card">
+  <h3 style="color:#fefdfd;">Student Name:</h3>
+  <p style="color:#fef9f9; opacity:0.85;">Kim Paulo Sumbra</p>
+</div>
+
+<div class="mini-card">
+  <h3 style="color:#f6f5f5;">Student id:</h3>
+  <p style="color:#f7f4f4; opacity:0.85;">MA22-IT-06337</p>
+</div>
+
+<div class="mini-card">
+  <h3 style="color:#f8f5f5;">Course & Year:</h3>
+  <p style="color:#f6efef; opacity:0.85;">BSIT-4D</p>
+</div>
+
+<div class="mini-card">
+  <h3 style="color:#f8f4f4;">Internship Period:</h3>
+  <p style="color:#f0eeee; opacity:0.85;">february 02, 2026 – May 07, 2026</p>
+</div>
+
+<div class="mini-card">
+  <h3 style="color:#f4f1f1;">Department/Agency:</h3>
+  <p style="color:#f2eded; opacity:0.85;">Barangay Office</p>
+</div>
+
+<div class="mini-card">
+  <h3 style="color:#f0eded;">Skill:</h3>
+  <p style="color:#f5f2f2; opacity:0.85;">Photoshop designer/editor</p>
+</div>
+    </div>
+
+  </div>
+
+</div>
+    <!-- TABLE OF CONTENTS (NASA LOOB NA NG HOME) -->
+    <div class="card toc-cardi" id="toc">
+
+  <h2 style="color: rgb(6, 6, 6);">
+  <i class="fa fa-list-ul" style="color: rgb(0, 0, 0);"></i> Table of Contents
+</h2>
+
+      <div class="toc-content">
+
+        <p class="toc-row lvl1"><span>Title Page</span></p>
+        <p class="toc-row lvl1"><span>Table of Contents</span></p>
+        <p class="toc-row lvl1"><span>Acknowledgment</span></p>
+        <p class="toc-row lvl1"><span>Student Trainee Prayer</span></p>
+        <p class="toc-row lvl1"><span>Personal Philosophy</span></p>
+        <p class="toc-row lvl1"><span>Career Plan</span></p>
+
+        <br>
+
+        <p class="toc-row lvl1"><b>Chapter I: Introduction</b></p>
+        <p class="toc-row lvl2"><span>A. Importance of Internship</span></p>
+        <p class="toc-row lvl2"><span>B. Objectives of Internship</span></p>
+        <p class="toc-row lvl2"><span>C. Time and Place</span></p>
+
+        <p class="toc-row lvl1"><b>Chapter II: Company Profile</b></p>
+        <p class="toc-row lvl2"><span>A. Nature of the Agency</span></p>
+        <p class="toc-row lvl2"><span>B. Mission / Vision / Goal Statement</span></p>
+        <p class="toc-row lvl2"><span>C. History / Background of the Agency</span></p>
+        <p class="toc-row lvl2"><span>D. Organizational Structure</span></p>
+
+        <p class="toc-row lvl1"><b>Chapter III: Work Experiences</b></p>
+        <p class="toc-row lvl2"><span>A. Weekly Accomplishment Report</span></p>
+        <p class="toc-row lvl2"><span>B. Daily Time Record</span></p>
+        <p class="toc-row lvl2"><span>C. Internship Progress Report</span></p>
+        <p class="toc-row lvl2"><span>D. Internship Analysis Report</span></p>
+
+        <p class="toc-row lvl1"><b>Chapter IV: Assessment of the Practicum Program</b></p>
+        <p class="toc-row lvl2"><span>A. Student Internship Evaluation Form</span></p>
+
+        <p class="toc-row lvl1"><b>Appendices</b></p>
+        <p class="toc-row lvl2"><span>Appendix A: Evaluation Form</span></p>
+        <p class="toc-row lvl2"><span>Appendix B: Photocopy Registration Form</span></p>
+        <p class="toc-row lvl2"><span>Appendix C: Photocopy Validated ID</span></p>
+        <p class="toc-row lvl2"><span>Appendix D: Parent's Consent</span></p>
+        <p class="toc-row lvl2"><span>Appendix E: Medical Certificate</span></p>
+        <p class="toc-row lvl2"><span>Appendix F: Certificate of Good Moral Character & Application Letter</span></p>
+        <p class="toc-row lvl2"><span>Appendix G: Application Letter</span></p>
+        <p class="toc-row lvl2"><span>Appendix H: Endorsement Letter</span></p>
+        <p class="toc-row lvl2"><span>Appendix I: Memorandum of Agreement</span></p>
+        <p class="toc-row lvl2"><span>Appendix J: Daily Time Record (Time Card)</span></p>
+        <p class="toc-row lvl2"><span>Appendix K: Certificate of Completion</span></p>
+        <p class="toc-row lvl2"><span>Appendix L: Certificate of Clearance</span></p>
+        <p class="toc-row lvl2"><span>Appendix M: Pictures during Pre-service Seminar</span></p>
+        <p class="toc-row lvl2"><span>Appendix N: Pictures during Office Works</span></p>
+        <p class="toc-row lvl2"><span>Appendix O: Code of Ethics for CAST Student Internship</span></p>
+        <p class="toc-row lvl2"><span>Appendix P: Curriculum Vitae</span></p>
+        <p class="toc-row lvl2"><span>Appendix Q: On-the-Job Training Portfolio Evaluation Form</span></p>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="card" id="acknowledgment">
+  <h2 style="color: black;"><i class="fa fa-file-alt"></i> Acknowledgment</h2>
+  <br><br>
+
+  <p>
+   I would like to express my deepest gratitude to my internship advisor, 
+    <span class="highlight-name">Professor Sir. Romel Sanqui</span>, 
+     and 
+    
+    for providing me guidance and support throughout my internship. Thank you for encouraging me to take on new challenges and for the valuable advice that helped me navigate my internship experience.
+  </p>
+
+  <p>
+   I am extremely thankful to my internship supervisor, Sec. Allysa Mae R. Obrador, for giving me the opportunity to join the Barangay Office as an intern. Thank you for believing in me and entrusting me with important projects and responsibilities. Under your mentorship, I have developed both professionally and personally.
+  </p>
+
+  <p>
+   I would also like to extend my appreciation to my fellow OJT trainees from the BSBA course. Sharing this journey with you made the daily tasks more enjoyable, and I am grateful for the teamwork and support we shared throughout our time at the office.
+  </p>
+
+  <p>
+   My sincere thanks to the team at the Barangay Office for warmly welcoming me and making my time here so enjoyable. In particular, I would like to recognize my colleagues for patiently training me and always being available to answer my questions. I have learned so much from all of you.
+  </p>
+
+  
+</div>
+
+
+<!-- ================= PRAYER ================= -->
+<div class="card" id="prayer">
+  <h2 style="color: black;"><i class="fa fa-hands-praying"></i> Student Trainee Prayer</h2>
+
+  <p><b>Heavenly Father,</b></p>
+
+  <p>
+   I stand before You today with a heart full of gratitude for the gift of this On-the-Job Training opportunity. Thank You for opening this door and for the trust placed in me by my school and this company.
+  <p>
+  As I step into this workplace, I ask for Your divine guidance. Grant me a sharp and focused mind so that I may quickly grasp the lessons, systems, and skills taught to me. Help me to be observant, to ask the right questions, and to handle every task—whether big or small—with excellence and integrity.
+  </p>
+
+  <p>
+   Lord, clothe me with humility. When I make mistakes, give me the grace to admit them and the wisdom to learn from them. May I be open to correction and see feedback as a tool for my growth. Help me to treat my supervisors and colleagues with the utmost respect, and let my presence be a source of help and positivity to the team.
+  <p>
+ I also pray for endurance and patience. When the workload feels heavy or the learning curve seems steep, remind me of my purpose. Calm my anxieties and replace my doubts with the confidence that comes from You. Protect me from accidents and keep me safe as I travel to and from work each day.
+  </p>
+<p>
+ Above all, may this OJT not just be about fulfilling a requirement, but about building my character. Let this experience shape me into a professional who is not only skilled in craft but also upright in heart. I offer all my hard work, my successes, and my struggles to You.
+  </p>
+
+ 
+
+  <p><b>In Your holy name,<br> I pray. Amen.</b></p>
+</div>
+
+
+<!-- ================= PERSONAL PHILOSOPHY ================= -->
+<div class="card" id="philosophy">
+  <h2 style="color: black;"><i class="fa fa-lightbulb"></i> Personal Philosophy</h2>
+
+ 
+  <p>
+   I believe that true professional success is measured by the value we provide to others. My philosophy is to serve with empathy and act with purpose. During this training, I aim to harmonize my technical knowledge with a compassionate heart, ensuring that every person I encounter feels respected and every problem I face is met with a solution-oriented mind
+  
+</div>
+
+
+<!-- ================= CAREER PLAN ================= -->
+<div class="card" id="career">
+  <h2 style="color: black;"><i class="fa fa-briefcase"></i>  Career Plan</h2>
+
+  <div class="career-item">
+    <h3 style="color: black;">1. Photo Editing Career Plan</h3>
+    <p>
+    My career plan is to start as a photo editing specialist where I can apply my expertise in image retouching, color correction, and digital enhancement. I aim to improve my technical proficiency in non-destructive editing workflows while providing high-quality visual content for various media platforms. In the future, I plan to advance into a senior editor role and oversee large-scale commercial campaigns and high-end creative projects.
+    </p>
+
+     <h3 style="color: black;">2. Graphic Design & Photoshop Career Plan</h3>
+    <p>
+      My goal is to build a career in graphic design by gaining hands-on experience in creating digital illustrations, brand identities, and promotional materials using industry-standard software. I plan to earn professional certifications and continuously refine my skills in typography, layout design, and visual storytelling. In the long term, I aspire to become an art director who leads creative teams and develops impactful visual strategies for global brands.
+    </p>
+  </div>
+
+
+
+
+</div>
+
+
+  </div>
+ 
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="section" id="introduction">
+
+  <!-- HEADER -->
+  <div class="section-header">
+
+  </div>
+
+  <!-- INTRO TEXT CONTAINER -->
+ <div class="card-box intro-box">
+
+  <h2 class="chapter">Chapter I</h2>
+
+  <h1 class="main-title">Introduction</h1>
+
+  <p class="intro-text">
+    Foundation and Framework of the Internship Program
+  </p>
+
+</div>
+
+  <!-- IMPORTANCE -->
+  <div class="card-box sub-card" id="importance">
+  <h3 style="color: black;">A. Importance of Internship</h3>
+  <p>
+  An internship serves as a vital bridge between academic theory and professional practice. It allows for the hands-on application of technical skills and the mastery of industry-standard tools. This experience fosters the development of essential soft skills like teamwork, communication, and time management. It also provides valuable exposure to workplace culture and professional networking opportunities. Ultimately, completing an internship builds professional confidence and significantly enhances a candidate's employability in a competitive job market.
+</div>
+
+  <!-- OBJECTIVES -->
+ <div class="card-box sub-card" id="objectives">
+  <h3 style="color: black;">B. Objectives of Internship</h3>
+
+  <p>
+     internship is aimed to bridge the gap between academic theory and practical, professional work, allowing students to gain hands-on experience in their chosen field. It serves as a structured, supervised learning experience designed to prepare interns for the workforce. is seek;
+  </p>
+
+  <ol>
+    <li>
+      Apply Academic Learning: To take classroom knowledge and apply it to real-world tasks and projects.
+    </li>
+
+    <li>
+      Gain Practical Experience: To develop industry-specific skills and learn the daily operations of a professional environment.
+    </li>
+
+    <li>
+     Career Exploration: To test your interest in a specific career path or industry before committing to full-time employment.
+    </li>
+  <li>
+    Develop Professional Skills: To hone both hard skills (technical knowledge) and soft skills (communication, teamwork, problem-solving, and time management).
+    </li>
+      <li>
+     Network and Build Relationships: To connect with industry experts, mentors, and peers who can guide your career and provide references.
+    </li>
+
+    <li>
+     Enhance Employability: To build your resume, making you a more attractive candidate for future, permanent job positions
+    </li>
+  </ol>
+</div>
+
+
+
+  <!-- TIME AND PLACE -->
+  <div class="card-box sub-card" id="timeplace">
+    <h3 style="color: black;">C. Time and Place of internship</h3>
+    <h4>Time of practicum</h4>
+    <p>
+      
+    Monday to friday
+    </p>
+      <p>
+      
+8:00am to 12:00nn and 1:00 to 5:00pm
+    </p>
+<br>
+     <p>
+      
+     The On-the-job training was performed from Monday to Friday. This training was undertaken from February 1, 2026 to May 8, 2026. At the Barangay Hall of Caminawit, San Jose, Occidental Mindoro where my area of assignment was in Photo editing & handling certificates, covering 486 hours of office work.
+    </p>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section company-section" id="company">
+
+  <!-- HERO -->
+  <div class="company-hero">
+
+    <h2 class="chapter">Chapter II</h2>
+
+
+
+    <h1 class="main-title">Company Profile</h1>
+
+    <p class="intro-text">
+      Overview of the organization, its mission, vision, history, and structure.
+    </p>
+
+  </div>
+
+  <!-- GRID CARDS -->
+  <div class="company-grid">
+
+    <div class="company-card" id="nature">
+      <h3 style="color: black;">A. Nature of Agency</h3>
+      <p>Barangay Caminawit is a local government unit (LGU) and the primary political subdivision of the Municipality of San Jose, Occidental Mindoro. As the basic unit of the Philippine government, the Barangay Hall serves as the administrative center where local policies are implemented and public services are delivered directly to the communit</p><br>
+
+<p>The Barangay Hall of Caminawit mainly focuses on maintaining public order, promoting community health, and implementing grassroots development projects. Just like other barangays, it is officially recognized under the Local Government Code of 1991 and operates through its executive and legislative arms—the Sangguniang Barangay and the Sangguniang Kabataan. Since its establishment, the barangay has been dedicated to providing its residents with accessible social services and is active in fostering a safe, productive, and self-reliant community.</p>
+    </div>
+
+    <div class="company-card" id="mission">
+  <h3 style="color: black;">B. Mission, Vision, Core Values & Goals</h3>
+
+  <!-- MISSION & VISION -->
+  <div class="mv-container">
+
+    <div class="mv-card mission">
+      <h4 style="color: black;">MISSION</h4>
+      <p>
+       TO ACTIVELY PERFORMED ALL TASKS ASSIGNED TO ALL BARANGAY OFFICIALS
+TO MOBILIZE THE ACTIVE PARTICIPATION OF ALL SECTORS AS A FORM OF PEOPLE EMPOWERMENT.
+TO GOVERN WITH OPENESS AND TRANSPARENCYTO INTRODUCE MEANINGFUL REFORMS AND CHANGES TO ECONOMIC, SOCIAL AND ECOLOGICAL UNDERTAKING OF THE CITIZENRY
+
+      </p>
+    </div>
+
+    <div class="mv-card vision">
+      <h4 style="color: black;">VISION</h4>
+      <p>
+       TO BE ABLE TO ESTABLISH A PEACEFULL PROGRESSIVE AND SELF-RELIANCE BARANGAY AND HAS THE CAPACITY TO PUSH PROFOUND LEGACY OF GOOD GOVERNANCE WHEREIN ALL OFFICIAL ARE AWARE OF THEIR RIGHTS AND RESPONSIBILITIES TOWARDS A MEANINGFUL AND EFFECTIVE PUBLIC SERVICE
+      </p>
+    </div>
+
+  </div>
+
+   
+
+
+  <!-- GOALS -->
+  <div class="mv-container">
+    <div class="mv-card goals">
+      <h4 style="color: black;">GOALS</h4>
+      <ol>
+        <li>Collectively identify primary and secondary problems and identify solutions.</li>
+<li>Conduct consultation with all sectors and solicit their recommendation.</li>
+<li>Increase and activate progressive taxation to bolster the Barangay Treasury.</li>
+<li>Conduct basic orientation training to barangay personnel based on their functions.</li>
+<li>Encourage commitment and inculcate sense of conviction to all Barangay Officials.</li>
+<li>Discourage political division among barangay officials and try to work as a united and collective body.</li>
+<li>Encourage a conducive business environment to attract labor-intensive investment to address unemployment in the barangay.</li>
+      </ol>
+    </div>
+  </div>
+
+
+
+    <div class="mv-container">
+  <div class="mv-card core">
+    <h4 style="color: black;">OBJECTIVES OF BARANGAY CAMINAWIT TO THE FOLLOWING:</h4>
+    <ul>
+      <li>To further improve the quality of services in supporting social institutions, non-government organizations (NGOs), and health services for all sectors, particularly women, children, and the elderly.</li>
+      
+      <li>To establish a fertile and favorable atmosphere for business establishments with labor-intensive operations, and to generate funds for livelihood support through active networking with local and national agencies.</li>
+      
+      <li><b>Public Infrastructure:</b> To work for the completion of unfinished roads, street lighting, and electric and water supply lines. To provide dike protection along Purok Maligaya and Bagong Silang, and to construct a mini-municipal/barangay hall.</li>
+      
+      <li>To gradually solve waste management problems by introducing solid waste management policies throughout the barangay.</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+    <div class="company-card" id="history">
+  <h3 style="color: black;">C. History / Background</h3>
+
+ <p>
+  <b>Naming of Caminawit:</b> It is said that the name "Caminawit" originated during the American period, particularly during the operation of the sugar central. The name was derived from the mode of transportation called "kalamazo," an improvised box car running on railroad tracks. People used to wait for the scheduled arrival of the kalamazo coming from the central. American employees would often say "COME & WAIT," and according to local stories, this phrase eventually evolved into the name "CAMINAWIT."
+</p>
+
+<p>
+  <b>The First Leaders of the Barangay:</b> Formal political organization began in the late 1950s to early 1960s. According to Bergonia Fadri, who was already 16 years old during World War II, Andres Barboza was appointed as Teniente del Barrio, followed by Sergio Gaudiel and Angel Reyes.
+</p>
+
+<p>
+  The first formal election was conducted in the late 1960s, where Florentino Reyes was elected Teniente del Barrio. He was followed by Francisco Evangelo and Crispin Mariano, who passed away while serving his term. He was succeeded by Dominador Pastrana but was later defeated by Leah Mariano, the widow of Crispin Mariano.
+</p>
+
+<p>
+  Emmanuel Agustin was elected in 1995 and served until he vacated his position after winning a seat as a Sangguniang Bayan member in 1998. Leonardo Quirante, who was then an incumbent Kagawad, succeeded him as the appointed Barangay Chairman.
+</p>
+
+<p>
+  In the 2002 elections, Leonardo Quirante was challenged by Danilo A. Centeno, son of Vedasto Centeno from Amaya, Tanza, Cavite, and was defeated. Danilo A. Centeno then served as Barangay Chairman and continued to lead the barangay in the succeeding years.
+</p>
+
+<p>
+  <b>Economic History (Fishing & Trucking):</b> Surrounded by nearly 70% water, Barangay Caminawit is predominantly a fishing community. The fishing industry dates back to the pre-colonial period and has been sustained by settlers from different parts of the country.
+</p>
+
+<p>
+  Fish catches from the surrounding waters of San Jose have supported the consumption needs of the entire municipality. The introduction of basnig fishing and later large-scale fishing methods by business groups helped transform Caminawit into a major supplier of fish products to Manila.
+</p>
+
+<p>
+  In the early 2000s, more advanced fishing operations emerged. "Compressor fishing," although prohibited by law, continued to exist as operators explored deeper seas beyond municipal waters. This also encouraged the growth of trucking businesses, contributing to local employment and trade with Manila.
+</p>
+
+</div>
+
+  <div class="company-card" id="org">
+  <h3 style="color: black;">D. Organizational Structure</h3>
+
+  <div class="org-image">
+    <img src="img/chart.jpg" alt="Organizational Structure">
+  </div>
+</div>
+
+  </div>
+
+</div>
+
+
+
+<!-- ================= CHAPTER III: WORK EXPERIENCE (ISOLATED) ================= -->
+<div class="section chapter3" id="work">
+
+  <!-- HERO -->
+  <div class="chapter3-hero">
+  <h2>Chapter III</h2>
+  <h1>Work Experience</h1>
+  <p>Documentation of tasks, reports, and training experiences during OJT.</p>
+</div>
+
+
+
+<!-- FILTER -->
+<div class="filter-box">
+  <h3>A. Weekly Accomplishment Report</h3><br>
+  <label><b>Select Week:</b></label>
+  <select id="weekFilter" onchange="filterTable()">
+    <option value="all">All Weeks</option>
+
+    <option value="w1">Week1</option>
+    <option value="w2">Week2</option>
+    <option value="w3"> Week3</option>
+    <option value="w4">Week4</option>
+   
+ 
+  </select>
+</div>
+
+<!-- TABLE -->
+<div class="table-container chapter3-card">
+<table id="chapter3Table">
+
+  <thead>
+    <tr>
+      <th>Activities</th>
+      <th>Problem Met</th>
+      <th>Solution</th>
+      <th>Remark</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr data-week="w1">
+  <td>Assisting in creating Barangay ID</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w1">
+  <td>Assisting in the preparation and processing of Certificates of Indigency</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w1">
+  <td>Practicing creating Certificates of Residence</td>
+  <td>Sometimes I make mistakes when entering names</td>
+  <td>Asked to re-check if names are correct</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w1">
+  <td>Creating Certificates of Residence</td>
+  <td>Sometimes I make mistakes when entering names</td>
+  <td>Asked to re-check if names are correct</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w1">
+  <td>Practicing making Barangay ID</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w1">
+  <td>Encoding names</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+
+<tr data-week="w2">
+  <td>Creating Barangay ID</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w2">
+  <td>Creating Certificates of Residence</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w2">
+  <td>Creating Certificates of Residence</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w2">
+  <td>Creating Barangay ID</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w2">
+  <td>Assisting supervisors</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+
+
+
+<!-- WEEK 3 -->
+<tr data-week="w3">
+  <td>Creating Barangay ID</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w3">
+  <td>Creating certificates for residence</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w3">
+  <td>Creating Certificates for residence</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w3">
+  <td>Creating barangay id</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w3">
+  <td>Assisting supervisors</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<!-- WEEK 4 -->
+<tr data-week="w4">
+  <td>Creating Barangay ID</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w4">
+  <td>Creating certificates for residence</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w4">
+  <td>Creating Certificates for residence</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w4">
+  <td>Creating barangay id</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+<tr data-week="w4">
+  <td>Assisting supervisors</td>
+  <td>None</td>
+  <td>-</td>
+  <td>Accomplished</td>
+</tr>
+
+
+
+
+    
+
+
+
+  </tbody>
+</table>
+</div><br>
+
+
+
+
+
+
+
+  
+
+<div class="chapter3-card" id="dtr">
+
+  <h3 style="color: black;">B. Daily Time Record</h3>
+
+  <p>
+    The Daily Time Record shows attendance, time in, and time out of the trainee.
+    It serves as proof of total hours rendered during internship.
+  </p>
+
+  <div class="dtr-container">
+
+    <!-- TABLE -->
+    <table class="dtr-table">
+
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Morning IN</th>
+          <th>Morning OUT</th>
+          <th>Afternoon IN</th>
+          <th>Afternoon OUT</th>
+          <th>Total Hours</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- JANUARY -->
+        
+
+      <!-- FEBRUARY -->
+<tr class="month"><td colspan="6">FEBRUARY</td></tr>
+
+<tr><td>02-02-2026</td><td>7:30 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:40 PM</td><td>8h 10m</td></tr>
+<tr><td>02-03-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:47 PM</td><td>8h 07m</td></tr>
+<tr><td>02-04-2026</td><td>7:33 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:43 PM</td><td>8h 10m</td></tr>
+<tr><td>02-05-2026</td><td>7:36 AM</td><td>12:00 NN</td><td>12:50 PM</td><td>4:46 PM</td><td>8h 20m</td></tr>
+<tr><td>02-06-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>12:58 PM</td><td>4:50 PM</td><td>8h 12m</td></tr>
+
+<tr><td>02-07-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>02-08-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>02-09-2026</td><td>7:46 AM</td><td>12:00 NN</td><td>1:05 PM</td><td>4:48 PM</td><td>7h 57m</td></tr>
+<tr><td>02-10-2026</td><td>7:42 AM</td><td>12:00 NN</td><td>12:52 PM</td><td>4:47 PM</td><td>8h 13m</td></tr>
+<tr><td>02-11-2026</td><td>7:44 AM</td><td>12:00 NN</td><td>1:02 PM</td><td>4:48 PM</td><td>8h 02m</td></tr>
+
+<tr><td>02-12-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>02-13-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h 20m</td></tr>
+<tr><td>02-14-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h</td></tr>
+
+<tr><td>02-15-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>02-16-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:49 PM</td><td>8h 09m</td></tr>
+<tr><td>02-17-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:52 PM</td><td>8h 12m</td></tr>
+<tr><td>02-18-2026</td><td>7:45 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:53 PM</td><td>8h 08m</td></tr>
+<tr><td>02-19-2026</td><td>7:43 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:50 PM</td><td>8h 07m</td></tr>
+<tr><td>02-20-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:51 PM</td><td>8h 11m</td></tr>
+<tr><td>02-21-2026</td><td>7:43 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:50 PM</td><td>8h 07m</td></tr>
+
+<tr><td>02-22-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>02-23-2026</td><td>7:46 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:50 PM</td><td>8h 04m</td></tr>
+<tr><td>02-24-2026</td><td>7:46 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:48 PM</td><td>8h 02m</td></tr>
+<tr><td>02-25-2026</td><td>7:43 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:50 PM</td><td>8h 07m</td></tr>
+<tr><td>02-26-2026</td><td>7:50 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:52 PM</td><td>8h 02m</td></tr>
+<tr><td>02-27-2026</td><td>7:50 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:51 PM</td><td>8h 01m</td></tr>
+
+<tr><td>02-28-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+      
+      <tr><td></td><td colspan="5">TOTAL:	154h 34m</td></tr>
+
+    <!-- MARCH -->
+<tr class="month"><td colspan="6">MARCH</td></tr>
+
+<tr><td>03-02-2026</td><td>7:30 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:40 PM</td><td>8h 10m</td></tr>
+<tr><td>03-03-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:47 PM</td><td>8h 07m</td></tr>
+<tr><td>03-04-2026</td><td>7:33 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:43 PM</td><td>8h 10m</td></tr>
+<tr><td>03-05-2026</td><td>7:36 AM</td><td>12:00 NN</td><td>12:50 PM</td><td>4:46 PM</td><td>8h 20m</td></tr>
+<tr><td>03-06-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>12:58 PM</td><td>4:50 PM</td><td>8h 12m</td></tr>
+<tr><td>03-07-2026</td><td>7:39 AM</td><td>12:00 NN</td><td>1:02 PM</td><td>4:37 PM</td><td>7h 56m</td></tr>
+
+<tr><td>03-08-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>03-09-2026</td><td>7:46 AM</td><td>12:00 NN</td><td>1:05 PM</td><td>4:48 PM</td><td>7h 57m</td></tr>
+<tr><td>03-10-2026</td><td>7:42 AM</td><td>12:00 NN</td><td>12:52 PM</td><td>4:47 PM</td><td>8h 13m</td></tr>
+<tr><td>03-11-2026</td><td>7:44 AM</td><td>12:00 NN</td><td>1:02 PM</td><td>4:48 PM</td><td>8h 02m</td></tr>
+<tr><td>03-12-2026</td><td>7:44 AM</td><td>12:00 NN</td><td>1:02 PM</td><td>4:48 PM</td><td>8h 02m</td></tr>
+<tr><td>03-13-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h 20m</td></tr>
+<tr><td>03-14-2026</td><td>7:42 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:50 PM</td><td>8h 08m</td></tr>
+
+<tr><td>03-15-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>03-16-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:49 PM</td><td>8h 09m</td></tr>
+<tr><td>03-17-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:52 PM</td><td>8h 12m</td></tr>
+<tr><td>03-18-2026</td><td>7:45 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:53 PM</td><td>8h 08m</td></tr>
+<tr><td>03-19-2026</td><td>7:43 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:50 PM</td><td>8h 07m</td></tr>
+<tr><td>03-20-2026</td><td>7:40 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:51 PM</td><td>8h 11m</td></tr>
+<tr><td>03-21-2026</td><td>7:44 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:49 PM</td><td>8h 05m</td></tr>
+
+<tr><td>03-22-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>03-23-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>03-24-2026</td><td>7:46 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:50 PM</td><td>8h 04m</td></tr>
+<tr><td>03-25-2026</td><td>7:43 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:50 PM</td><td>8h 07m</td></tr>
+<tr><td>03-26-2026</td><td>7:50 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:52 PM</td><td>8h 02m</td></tr>
+<tr><td>03-27-2026</td><td>7:50 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:51 PM</td><td>8h 01m</td></tr>
+
+<tr><td>03-28-2026</td><td>7:48 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>4:53 PM</td><td>8h 05m</td></tr>
+
+<tr><td>03-29-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>03-30-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>03-31-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+   <tr><td></td><td colspan="5">TOTAL:	193h 49m</td></tr>
+
+      <!-- APRIL -->
+      <tr class="month"><td colspan="6">APRIL</td></tr>
+
+<tr><td>04-01-2026</td><td>10:46 AM</td><td>3:00 PM</td><td>4:00 PM</td><td>8:00 PM</td><td>8.23</td></tr>
+
+<tr><td>04-02-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>04-03-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>04-04-2026</td><td>10:32 AM</td><td>3:00 PM</td><td>4:00 PM</td><td>8:00 PM</td><td>8.47</td></tr>
+<tr><td>04-05-2026</td><td>9:29 AM</td><td>3:00 PM</td><td>4:00 PM</td><td>8:00 PM</td><td>8.52</td></tr>
+
+<tr><td>04-06-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>12:58 PM</td><td>5:00 PM</td><td>8h 02m</td></tr>
+<tr><td>04-07-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:02 PM</td><td>5:00 PM</td><td>7h 58m</td></tr>
+
+<tr><td>04-08-2026</td><td>10:58 AM</td><td>3:00 PM</td><td>4:00 PM</td><td>8:00 PM</td><td>8.03</td></tr>
+
+<tr><td>04-09-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:05 PM</td><td>5:00 PM</td><td>7h 55m</td></tr>
+<tr><td>04-10-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h</td></tr>
+<tr><td>04-11-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h</td></tr>
+
+<tr><td>04-12-2026</td><td>10:56 AM</td><td>3:00 PM</td><td>4:00 PM</td><td>8:00 PM</td><td>8.07</td></tr>
+
+<tr><td>04-13-2026</td><td></td><td></td><td>1:00 PM</td><td>5:00 PM</td><td>4h</td></tr>
+
+<tr><td>04-14-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h</td></tr>
+
+<tr><td>04-15-2026</td><td></td><td></td><td></td><td></td><td></td></tr>
+
+<tr><td>04-16-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h</td></tr>
+
+<tr><td>04-17-2026</td><td></td><td></td><td>1:00 PM</td><td>5:00 PM</td><td>4h</td></tr>
+
+<tr><td>04-18-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h</td></tr>
+
+<tr><td>04-19-2026</td><td>10:44 AM</td><td>3:00 PM</td><td>4:00 PM</td><td>8:00 PM</td><td>8.27</td></tr>
+
+<tr><td>04-20-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h</td></tr>
+
+<tr><td>04-21-2026</td><td></td><td></td><td>1:00 PM</td><td>5:00 PM</td><td>4h</td></tr>
+
+<tr><td>04-22-2026</td><td>10:53 AM</td><td>3:00 PM</td><td>4:00 PM</td><td>8:00 PM</td><td>8.12</td></tr>
+
+<tr><td>04-23-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h</td></tr>
+
+<tr><td>04-24-2026</td><td>8:00 AM</td><td>12:00 NN</td><td></td><td></td><td>4h</td></tr>
+
+<tr><td>04-25-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h</td></tr>
+
+<tr><td>04-26-2026</td><td>10:50 AM</td><td>3:00 PM</td><td>4:00 PM</td><td>8:00 PM</td><td>8.17</td></tr>
+
+<tr><td>04-27-2026</td><td></td><td></td><td>1:45 PM</td><td>5:00 PM</td><td>3h 15m</td></tr>
+
+<tr><td>04-28-2026</td><td>8:00 AM</td><td>12:00 NN</td><td>1:00 PM</td><td>5:00 PM</td><td>8h</td></tr>
+      
+   <tr><td></td><td colspan="5">TOTAL:	100h 55m</td></tr>
+      </tbody>
+
+    </table>
+
+    <!-- SUMMARY -->
+   <div class="dtr-summary">
+  <h3 style="color: black;">DTR Summary</h3>
+
+  <table class="summary-table">
+   
+    <tr><td>February</td><td>154h 34m</td></tr>
+    <tr><td>March</td><td>193h 49m</td></tr>
+    <tr><td>April</td><td>100h 55m</td></tr>
+
+    <tr class="grand-total">
+      <td><b>TOTAL</b></td>
+      <td><b>449h 18m</b></td>
+    </tr>
+  </table>
+</div>
+
+  </div>
+</div><br><br>
+
+
+
+
+
+ <div class="chapter3-section">
+<br><br>
+  <!-- TITLE -->
+  <h3 class="chapter3-title" style="color: black;">C. Internship Progress Report</h3>
+
+  <!-- GRID -->
+  <div class="chapter3-grid">
+
+    <div class="chapter3-card">
+      <h3 style="color: black;"><i class="fa-solid fa-user" ></i> Name</h3>
+      <p>Kim Paulo Sumbra</p>
+    </div>
+
+    <div class="chapter3-card">
+      <h3 style="color: black;"><i class="fa-solid fa-graduation-cap"></i> Course</h3>
+      <p>Bachelor of Science in Information Technology.</p>
+    </div>
+
+    <div class="chapter3-card">
+      <h3 style="color: black;"><i class="fa-solid fa-building"></i> Agency</h3>
+      <p>Barangay Hall of Caminawit</p>
+    </div>
+
+    <div class="chapter3-card">
+      <h3 style="color: black;"><i class="fa-solid fa-calendar-days"></i> Period Covered</h3>
+      <p>January 27, 2026 to April 16, 2026</p>
+    </div>
+
+    <div class="chapter3-card">
+      <h3 style="color: black;"><i class="fa-solid fa-clock"></i> Total Hours</h3>
+      <p>488.00 hrs</p>
+    </div>
+
+    <div class="chapter3-card">
+      <h3 style="color: black;"><i class="fa-solid fa-flask"></i>Location</h3>
+      <p>Barangay Hall of Caminawit, San Jose, Occidental Mindoro </p>
+    </div>
+
+  </div>
+<br><br>
+
+
+
+  <div class="table-wrapper chapter3-card">
+
+  <!-- NEW SUMMARY INFO TABLE -->
+  <div class="internship-info-card">
+
+ <div style="color: #0b0b0b;">
+  Internship Information
+</div>
+
+  <table class="internship-info-table">
+
+    <tbody>
+
+      <tr>
+        <td class="label">Name</td>
+        <td class="value">Kim Paulo Sumbra</td>
+      </tr>
+
+      <tr>
+        <td class="label">Date</td>
+        <td class="value">May 07, 2026</td>
+      </tr>
+
+      <tr>
+        <td class="label">Internship Site</td>
+        <td class="value">Barangay Hall of CaminawitP</td>
+      </tr>
+
+      <tr>
+        <td class="label">Hours Completed</td>
+        <td class="value">486 hrs</td>
+      </tr>
+
+      <tr>
+        <td class="label">Report Coverage</td>
+        <td class="value">february 02, 2026 – May 07, 2026</td>
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+  <br>
+
+  <!-- EXISTING TABLE (MOSES) -->
+  <h3 class="chapter3-title" style="color: black;">D. Internship Objectives & Status</h3>
+
+  <table class="chapter3-table">
+
+    <thead>
+      <tr>
+        <th>Objectives</th>
+        <th>Work Status</th>
+        <th>Problems Met</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <td>Monitoring printers/laptops</td>
+        <td class="done">Accomplished</td>
+        <td>slow to print</td>
+      </tr>
+
+      <tr>
+        <td>Assisting residents that in needs</td>
+        <td class="done">Accomplished</td>
+        <td>-</td>
+      </tr>
+
+      <tr>
+        <td>Enhance my skills</td>
+        <td class="done">Accomplished</td>
+        <td>-</td>
+      </tr>
+
+      
+      
+
+    </tbody>
+
+  </table>
+<div style="margin-top: 30px; font-size: 14px; color: #333; line-height: 1.8; text-align: center;">
+
+  <p>
+    The following report accurately describes the internship activities completed to date:
+  </p>
+
+  <br><br>
+
+  <p>
+    Intern:
+    <span style="display: inline-block; border-bottom: 1px solid #000; padding: 0 20px;">
+    Kim Paulo Sumbra
+    </span>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Date: April 2026
+  </p>
+
+  <br><br>
+
+  <p>
+    I have read the attached report and concur with its content:
+  </p>
+
+  <br><br>
+
+  <p>
+    Site Supervisor:
+    <span style="display: inline-block; border-bottom: 1px solid #000; padding: 0 20px;">
+   Agosto D. Balmes
+    </span>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Date: April 2026
+  </p>
+
+</div>
+</div>
+<br><br>
+
+  <div class="chapter3-card" id="analysis">
+
+  <h3 style="color: black;">D. Internship Analysis Report</h3>
+
+  <div class="analysis-grid">
+
+    <!-- CARD 1 -->
+    <div class="analysis-card">
+      <h4>1. Setting</h4>
+
+      <p><b>The setting was good because…</b><br>
+                      the barangay was well organized, and the files (like certificates), laptops, and printers were properly arranged and making it easy to work efficiently.</p>
+
+      <p><b>The setting was limited by…</b><br>
+             Lack of laptops to use, currently there's only three laptops, and one pc where we taking turns in using laptop, us OJT trainee have to ask for permission to borrow the other laptop when our supervisors, done using the other two laptops. same goes for the type writer, we also take turns using it since theres only one type writer available
+</p>
+
+    
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="analysis-card">
+      <h4>2. Site Supervisor</h4>
+
+      <p><b>The greatest contribution…</b><br>
+      The supervisor teaches us what we need to learn and assist us for us to improve our skills and personal development.</p>
+
+      <p><b>The general level of supervision was…</b><br>
+       the supervision was very effective 
+i needed more from the supervisor in the way of...
+more development in communicational and managerial guidance
+
+</p>
+
+     
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="analysis-card">
+      <h4>3. Environment Conditions or Events</h4>
+
+      <p><b>The one event/characteristic…</b><br>
+       Maintaining discipline atwork, respect and following the rules greatly influenced my internship.</p>
+
+      <p><b>A trend/issue…</b><br>
+       New interns faced challenges due to unfamiliarity with technologies.</p>
+
+      <p><b>
+Diversity of co-workers…</b><br>
+    Enhanced communication skills and adaptability.</p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="analysis-card">
+      <h4>4. Self-Assessment</h4>
+
+      <p><b>The most important thing I learned is…</b><br>
+          is how to use the POS and be accurate in handling money.</p>
+
+      <p><b>I contributed to the organization by…</b><br>
+        Sharing knowledge and assisting IT-related tasks..</p>
+
+<p><b>   I still need more experience in the area of IT skills…</b><br>
+          like troubleshooting and system knowledge.</p>
+
+
+<p><b>    If I were to repeat this experience I would try to…</b><br>
+            learn more about the system and improve my speed and confidence.</p>
+
+
+
+
+    </div>
+
+ 
+  </div>
+
+  <div"><br><br> 
+  <b>Note:</b> This analysis need not be shared with the site supervisor.
+</div>
+</div>
+  </div>
+
+</div>
+
+
+
+
+<div class="section assessment-section" id="assessment">
+
+  <div class="assessment-hero">
+    <h2 class="chapter">Chapter IV</h2>
+    <h1 class="main-title">Assessment</h1>
+    <p class="intro-text">Evaluation of the practicum program and performance.</p>
+  </div>
+
+
+
+
+
+
+  
+  <div class="assessment-card">
+
+  <!-- SECTION TITLE -->
+ <h3 class="card-title" >
+  <i class="fa-solid fa-user-graduate"></i>
+  Student Internship Evaluation
+</h3><br><br><br>
+
+  <!-- MAIN HEADER -->
+ <div class="assessment-info-title" style="color: black;">
+  <i class="fa-solid fa-graduation-cap"></i>
+  STUDENT INTERNSHIP PERFORMANCE EVALUATION
+</div>
+
+  <!-- SUBTITLE -->
+  <div class="assessment-subtitle" style="color: black;">
+    DevOps Outsourcing Inc. × Occidental Mindoro State College
+  </div><br><br>
+
+  <!-- INFO GRID -->
+<div class="assessment-info">
+
+  <!-- LEFT SIDE (5) -->
+  <div class="col">
+    <div class="info-row" ><span style="color: black;">Student Name:</span> Kim Paulo Sumbra </div>
+    <div class="info-row"><span style="color: black;">Student ID:</span> MA22-IT-06337</div>
+    <div class="info-row"><span style="color: black;">Program/Course:</span> BS Information Technology</div>
+    <div class="info-row"><span style="color: black;">Academic Year:</span> 2026-2026</div>
+    <div class="info-row"><span style="color: black;">Internship Start Date:</span> January 27, 2026</div>
+  </div>
+
+  <!-- RIGHT SIDE (5) -->
+  <div class="col">
+    <div class="info-row"><span style="color: black;">Internship End Date:</span> May 07, 2026</div>
+    <div class="info-row"><span style="color: black;">Location:</span>Barangay Hall of Caminawit, San Jose, Occidental Mindoro  </div>
+    <div class="info-row"><span style="color: black;">Department:</span>Barangay Hall of Caminawit</div>
+    <div class="info-row"><span style="color: black;">Supervisor:</span>Agosto D. Balmer</div>
+    <div class="info-row"><span style="color: black;">Position:</span>Assistant</div>
+  </div>
+
+</div>
+
+</div> 
+<br><br><br>
+<div class="section-title-eval" style="color: black;">
+  Student Internship Evaluation
+</div>
+
+<div class="section-subtitle-eval" >
+ Official Evaluation Documentation from the I.T Department of Occidental Mindoro State College in coordination with the Internship Site
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="section appendix-section" id="appendices">
+
+  <div class="appendix-hero">
+    <h2 class="chapter">Appendices</h2>
+    <h1 class="main-title">Supporting Documents</h1>
+    <p class="intro-text">Complete collection of required internship documents (A–Q).</p>
+  </div>
+
+  <div class="appendix-grid">
+
+    <!-- A -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix A - Evaluation Form</h3>
+        <div class="icon"><i class="fa-solid fa-chart-column"></i></div>
+      </div>
+      <div class="content">
+        <p>Official student evaluation form from the institution.</p>
+      </div>
+      <button onclick="openGallery(['img/eval.jpg','img/eval1.jpg'])">View Document</button>
+    </div>
+
+    <!-- B -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix B - Photocopy Registration Form</h3>
+        <div class="icon"><i class="fa-solid fa-file-lines"></i></div>
+      </div>
+      <div class="content">
+        <p>Copy of official enrollment/registration form used during OJT application.</p>
+      </div>
+      <button onclick="openGallery(['img/cor.jpg'])">View Document</button>
+    </div>
+
+    <!-- C -->
+   <div class="appendix-card">
+
+  <div class="top">
+    <h3>Appendix C - Photocopy Validated ID</h3>
+    <div class="icon"><i class="fa-solid fa-id-card"></i></div>
+  </div>
+
+  <div class="content">
+    <p>Validated student ID used for verification during OJT.</p>
+  </div>
+
+  <button onclick="openGallery(['img/ids.jpg','img/idss.jpg'])">
+    View Document
+  </button>
+
+</div>
+
+    <!-- D -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix D - Parent's Consent</h3>
+        <div class="icon"><i class="fa-solid fa-people-roof"></i></div>
+      </div>
+      <div class="content">
+        <p>Signed permission form from parents allowing the student to undergo OJT.</p>
+      </div>
+      <button onclick="openGallery(['img/consent.jpg'])">View Document</button>
+    </div>
+
+    <!-- E -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix E - Medical Certificate</h3>
+        <div class="icon"><i class="fa-solid fa-notes-medical"></i></div>
+      </div>
+      <div class="content">
+        <p>Health clearance certifying that the student is fit for internship.</p>
+      </div>
+      <button onclick="openGallery(['img/med1.jpg','img/mid2.jpg'])">View Document</button>
+    </div>
+
+    <!-- F -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix F - Certificate of Good Moral Character</h3>
+        <div class="icon"><i class="fa-solid fa-certificate"></i></div>
+      </div>
+      <div class="content">
+        <p>Certificate confirming good moral standing of the student.</p>
+      </div>
+      <button onclick="openGallery(['img/moral.jpg'])">View Document</button>
+    </div>
+
+    <!-- G -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix G - Application Letter</h3>
+        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+      </div>
+      <div class="content">
+        <p>Official letter of application for On-the-Job Training placement.</p>
+      </div>
+      <button onclick="openGallery(['img/appli.jpg'])">View Document</button>
+    </div>
+
+    <!-- H -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix H - Endorsement Letter</h3>
+        <div class="icon"><i class="fa-solid fa-paper-plane"></i></div>
+      </div>
+      <div class="content">
+        <p>Letter from the school endorsing the student to the company.</p>
+      </div>
+      <button onclick="openGallery(['img/indors.jpg'])">View Document</button>
+    </div>
+
+    <!-- I -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix I - Memorandum of Agreement</h3>
+        <div class="icon"><i class="fa-solid fa-handshake"></i></div>
+      </div>
+      <div class="content">
+        <p>Agreement between school and company regarding OJT program.</p>
+      </div>
+      <button onclick="openModal('img/i.jpg')">View Document</button>
+    </div>
+
+    <!-- J -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix J - Daily Time Record</h3>
+        <div class="icon"><i class="fa-solid fa-clock"></i></div>
+      </div>
+      <div class="content">
+        <p>Record of daily attendance including time in and time out.</p>
+      </div>
+      <button onclick="openGallery(['img/s1.jpg','img/s2.jpg'])">View Document</button>
+    </div>
+
+    <!-- K -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix K - Certificate of Completion</h3>
+        <div class="icon"><i class="fa-solid fa-trophy"></i></div>
+      </div>
+      <div class="content">
+        <p>Certificate proving completion of required OJT hours.</p>
+      </div>
+      <button onclick="openModal('img/k.jpg')">View Document</button>
+    </div>
+
+    <!-- L -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix L - Certificate of Clearance</h3>
+        <div class="icon"><i class="fa-solid fa-circle-check"></i></div>
+      </div>
+      <div class="content">
+        <p>Clearance confirming all requirements were completed.</p>
+      </div>
+      <button onclick="openModal('img/l.jpg')">View Document</button>
+    </div>
+
+    <!-- M -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix M - Seminar Photos</h3>
+        <div class="icon"><i class="fa-solid fa-camera"></i></div>
+      </div>
+      <div class="content">
+        <p>Documentation photos during seminar and orientation.</p>
+      </div>
+      <button onclick="openGallery(['img/sem.jpg','img/sem1.jpg','img/sem3.jpg','img/sem2.jpg','img/sem4.jpg'])">View Document</button>
+    </div>
+
+    <!-- N -->
+    <div class="appendix-card">
+      <div class="top">
+        <h3>Appendix N - Office Works Photos</h3>
+        <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+      </div>
+      <div class="content">
+        <p>Photos taken during internship tasks and activities.</p>
+      </div>
+ <button onclick="openGallery(['img/sen.jpg','img/sen1.jpg','img/sen2.jpg','img/sen4.jpg','img/sen5.jpg','img/sen6.jpg','img/sen7.jpg','img/sen8.jpg'])">View Document</button>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- O -->
+    <div class="ethics-card-o" id="appendix-code-ethics-o">
+
+  <div class="ethics-top-o">
+    <h3>Appendix O - Code of Ethics</h3>
+  </div>
+
+  <div class="ethics-content-o">
+
+    <p class="ethics-intro-o">
+      	I will use my special knowledge and skills for the benefit of the public. I will serve employees and clients with integrity, subject to an overriding responsibility to the public interest, and I will strive to enhance the competence and prestige of the profession.
+
+    <p class="ethics-subtitle-o"><b>By these means:</b></p>
+
+    <ol class="ethics-list-o">
+  <li>I will promote public knowledge, understanding, and appreciation of Information Technology.</li>
+<li>I will consider the general welfare and public good in the performance of my work.</li>
+<li>I will advertise goods or professional services in a clear and truthful manner.</li>
+<li>I will comply and strictly abide by intellectual property laws and related IT laws.</li>
+<li>I will accept full responsibility for my work and act with professionalism.</li>
+<li>I will make truthful statements about my skills and services.</li>
+<li>I will not disclose confidential information without consent.</li>
+<li>I will strive for high quality in all products and services.</li>
+<li>I will not participate in illegal IT systems or activities.</li>
+<li>I will continuously improve my IT professional skills.</li>
+    </ol>
+
+  </div>
+
+</div>
+
+    <!-- P -->
+<div class="appendix-row-pq">
+
+  <!-- P (LEFT) -->
+  <div class="appendix-card-p" id="appendix-p">
+    <div class="top">
+      <h3>Appendix P - Curriculum Vitae</h3>
+      <div class="icon"><i class="fa-solid fa-file"></i></div>
+    </div>
+
+    <div class="content">
+      <p>Updated resume including education and experience.</p>
+    </div>
+
+    <button onclick="openGallery(['img/simple.jpg'])">
+      View Document
+    </button>
+  </div>
+
+  <!-- Q (RIGHT) -->
+  <div class="appendix-card-q" id="appendix-q">
+    <div class="top">
+      <h3>Appendix Q - Portfolio Evaluation</h3>
+      <div class="icon"><i class="fa-solid fa-file-signature"></i></div>
+    </div>
+
+    <div class="content">
+      <p>Final evaluation form for OJT portfolio.</p>
+    </div>
+
+    <button onclick="openModal('img/q.jpg')">
+      View Document
+    </button>
+  </div>
+
+</div>
+
+  </div>
+</div>
+
+
+
+<!-- MODAL -->
+<div id="imgModal" class="modal" onclick="closeModal()">
+
+  <span class="close" onclick="closeModal()">&times;</span>
+
+  <button class="nav left" onclick="prevImage(event)">❮</button>
+
+  <img class="modal-content" id="modalImg" onclick="event.stopPropagation()">
+
+  <button class="nav right" onclick="nextImage(event)">❯</button>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+<!-- FOOTER -->
+<footer class="ojt-footer">
+  <div class="footer-content">
+    <h2>OJT Student Portfolio</h2>
+    <p>A comprehensive documentation of on-the-job training experiences, projects, and achievements.</p>
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>Portfolio Sections</h3>
+       <ul>
+  <li><a href="#" onclick="showSection('home'); return false;">Title Page</a></li>
+
+  <li><a href="#" onclick="showSection('toc'); return false;">Table of Contents</a></li>
+
+  <li><a href="#" onclick="showSection('acknowledgment'); return false;">Acknowledgment</a></li>
+
+  <li><a href="#" onclick="showSection('prayer'); return false;">Student Trainee Prayer</a></li>
+
+  <li><a href="#" onclick="showSection('philosophy'); return false;">Personal Philosophy</a></li>
+
+  <li><a href="#" onclick="showSection('career'); return false;">Career Plan</a></li>
+</ul>
+      </div>
+
+      <div>
+  <h3>Chapters</h3>
+  <ul>
+    <li><a href="#" onclick="showSection('introduction'); return false;">Chapter I: Introduction</a></li>
+
+    <li><a href="#" onclick="showSection('company'); return false;">Chapter II: Company Profile</a></li>
+
+    <li><a href="#" onclick="showSection('work'); return false;">Chapter III: Work Experience</a></li>
+
+    <li><a href="#" onclick="showSection('assessment'); return false;">Chapter IV: Assessment</a></li>
+
+    <li><a href="#" onclick="showSection('appendices'); return false;">Appendices</a></li>
+  </ul>
+</div>
+
+<div>
+  <h3>Company & Work Details</h3>
+  <ul>
+
+    <!-- COMPANY SECTION -->
+    <li>
+      <a href="#" onclick="showSection('company'); setTimeout(()=>goTo('nature'),100); return false;">
+        Nature of Agency
+      </a>
+    </li>
+
+    <li>
+      <a href="#" onclick="showSection('company'); setTimeout(()=>goTo('mission'),100); return false;">
+        Mission & Vision
+      </a>
+    </li>
+
+    <li>
+      <a href="#" onclick="showSection('company'); setTimeout(()=>goTo('history'),100); return false;">
+        History / Background
+      </a>
+    </li>
+
+    <li>
+      <a href="#" onclick="showSection('company'); setTimeout(()=>goTo('org'),100); return false;">
+        Organization Structure
+      </a>
+    </li>
+
+    <!-- WORK SECTION -->
+    <li>
+      <a href="#" onclick="showSection('work'); setTimeout(()=>goTo('dtr'),100); return false;">
+        Daily Time Record
+      </a>
+    </li>
+
+    <li>
+      <a href="#" onclick="showSection('work'); setTimeout(()=>goTo('progress'),100); return false;">
+        Progress Report
+      </a>
+    </li>
+
+    <li>
+      <a href="#" onclick="showSection('work'); setTimeout(()=>goTo('analysis'),100); return false;">
+        Analysis Report
+      </a>
+    </li>
+
+  </ul>
+  
+  <div id="ojt-footer-social">
+
+  <a href="https://www.facebook.com/kimpaulo.sombra" target="_blank" class="fb">
+     <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="24">
+  </a>
+
+  <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F_u%2Fkimpaulosombra%3Figsh%3DMWdkZGNneWN3Mzc3NA%253D%253D%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExUXFuSk5qUG1uVTg0UzlVVXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5rRO1YWxYDeisutnUiprz7dc2ZKbw8_ZPsASSYkVYm2g_WWF6B10yPOZN5Kw_aem_FkpuNCDIao22AVASFbfpcw&h=AT47wEYpYsWXdyBu88_5SDjZkq1exNMp8GDvdjJqNG-vHF_euSF3FNKxCd2UcjU3iR49InAppJseNN3nIseD75_7mKIOeanUHLWA-rEL8SVuvrbceH7SJM6js6T1LbOn" target="_blank" class="ig">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+</div>
+</div>
+</footer>
+
+<script>
+
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+  }
+
+  // =========================
+  // 🔥 DROPDOWN (ACCORDION STYLE)
+  // =========================
+  document.querySelectorAll(".dropdown-btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+
+      const parentDropdown = this.parentElement;
+
+      // close other dropdowns
+      document.querySelectorAll(".dropdown").forEach(drop => {
+        if (drop !== parentDropdown) {
+          drop.classList.remove("active");
+        }
+      });
+
+      // toggle current dropdown
+      parentDropdown.classList.toggle("active");
+    });
+  });
+
+
+  // =========================
+  // 🔥 SHOW SECTIONS (NO AUTO CLOSE ON MOBILE)
+  // =========================
+  function showSection(id) {
+
+    document.querySelectorAll(".section").forEach(sec => {
+      sec.style.display = "none";
+    });
+
+    const target = document.getElementById(id);
+    if (target) {
+      target.style.display = "block";
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // ✔ FIX: close sidebar ONLY on desktop
+    if (window.innerWidth > 768) {
+      document.getElementById("sidebar").classList.remove("active");
+    }
+  }
+
+
+  // =========================
+  // 🔥 GO TO SECTION (SMOOTH SCROLL FIXED)
+  // =========================
+  function goToSection(event, id) {
+    event.preventDefault();
+
+    const target = document.getElementById(id);
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    // ✔ FIX: same condition
+    if (window.innerWidth > 768) {
+      document.getElementById("sidebar").classList.remove("active");
+    }
+  }
+
+
+  function goTo(id) {
+    const target = document.getElementById(id);
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  }
+
+
+  // =========================
+  // 🔥 DEFAULT LOAD (HOME ONLY)
+  // =========================
+  window.addEventListener("load", function () {
+
+    document.querySelectorAll(".section").forEach(sec => {
+      sec.style.display = "none";
+    });
+
+    const home = document.getElementById("home");
+    if (home) {
+      home.style.display = "block";
+    }
+  });
+
+
+
+
+
+
+function filterTable() {
+  const filter = document.getElementById("weekFilter").value;
+  const rows = document.querySelectorAll("#chapter3Table tbody tr");
+
+  rows.forEach(row => {
+    if (filter === "all") {
+      row.style.display = "";
+    } else {
+      row.style.display = (row.getAttribute("data-week") === filter) ? "" : "none";
+    }
+  });
+}
+
+
+
+let images = [];
+let currentIndex = 0;
+
+function openGallery(imgArray) {
+  images = imgArray;
+  currentIndex = 0;
+
+  document.getElementById("modalImg").src = images[currentIndex];
+  document.getElementById("imgModal").classList.add("show");
+}
+
+function closeModal() {
+  document.getElementById("imgModal").classList.remove("show");
+}
+
+// NEXT
+function nextImage(event) {
+  if (event) event.stopPropagation();
+
+  if (currentIndex < images.length - 1) {
+    currentIndex++;
+    document.getElementById("modalImg").src = images[currentIndex];
+  }
+}
+
+// PREV
+function prevImage(event) {
+  if (event) event.stopPropagation();
+
+  if (currentIndex > 0) {
+    currentIndex--;
+    document.getElementById("modalImg").src = images[currentIndex];
+  }
+}
+
+// KEYBOARD SUPPORT
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") closeModal();
+  if (e.key === "ArrowRight") nextImage();
+  if (e.key === "ArrowLeft") prevImage();
+});
+
+
+
+function openProfileImage(img) {
+  var modal = document.getElementById("profileImageModal");
+  var modalImg = document.getElementById("profileModalImg");
+
+  modal.style.display = "flex";
+  modalImg.src = img.src;
+}
+
+function closeProfileImage() {
+  document.getElementById("profileImageModal").style.display = "none";
+}cument.getElementById("imageModal").style.display = "none";
+
+</script>
+
+</body>
+</html>
